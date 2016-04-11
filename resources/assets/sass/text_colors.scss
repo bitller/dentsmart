@@ -1,0 +1,28 @@
+.blue-grey-text {
+  color: #565656;
+}
+
+.white-text, .white-text a {
+  color: #ffffff;
+}
+
+.white-text a {
+  text-decoration: underline;
+}
+
+.white-text:hover, .white-text a:hover {
+  color: #ffffff;
+}
+
+.light-grey-text {
+  color: #9e9e9e;
+}
+
+.light-grey-text a {
+  text-decoration: underline;
+  color: #9e9e9e;
+}
+
+.light-grey-text a:hover {
+  color: $primary;
+}
