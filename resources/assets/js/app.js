@@ -14,10 +14,11 @@ import Register from './components/Register.vue';
 import LogIn from './components/LogIn.vue';
 
 new Vue({
+    
     /**
      * Target element.
      */
-    el: '#cloud_ticket',
+    el: '#dent_smart',
 
     /**
      * Application components.

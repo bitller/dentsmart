@@ -24085,7 +24085,7 @@ new Vue({
     /**
      * Target element.
      */
-    el: '#cloud_ticket',
+    el: '#dent_smart',
 
     /**
      * Application components.

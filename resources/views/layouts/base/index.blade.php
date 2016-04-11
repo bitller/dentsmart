@@ -3,7 +3,7 @@
 <head>
     <meta id="token" content="{{ csrf_token() }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>DentSmart</title>
+    <title>Dent Smart</title>
 
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
@@ -26,22 +26,22 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/dashboard"><span class="glyphicon glyphicon-tag"></span>&nbsp;DentSmart</a>
+                        <a class="navbar-brand" href="/dashboard"><span class="glyphicon glyphicon-tag"></span>&nbsp;Dent Smart</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <!-- BEGIN Movies -->
                         <li>
-                            <a href="/dashboard/patients"><span class="glyphicon glyphicon-user"></span>&nbsp; Pacienţi</a>
+                            <a href="/dashboard/patients"><span class="glyphicon glyphicon-user"></span>&nbsp;Pacienţi</a>
                         </li>
                         <!-- END Movies -->
                         <!-- BEGIN Halls -->
                         <li>
-                            <a href="/dashboard/appointments"><span class="glyphicon glyphicon-calendar"></span>&nbsp; Programări</a>
+                            <a href="/dashboard/appointments"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Programări</a>
                         </li>
                         <!-- END Halls -->
 
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Tratamente</a>
+                            <a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Intervenţii</a>
                         </li>
 
                         <!-- BEGIN Statistics -->
@@ -55,7 +55,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <span class="glyphicon glyphicon-user"></span>&nbsp;John doe cinema
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;{{ $user->first_name . ' ' . $user->last_name }}
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <!-- BEGIN Settings -->

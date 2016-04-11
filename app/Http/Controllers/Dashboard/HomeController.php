@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BaseController;
 
 /**
  * Dashboard homepage logic.
  * 
  * @author Alexandru Bugarin <alexandru.bugarin@gmail.com>
  */
-class HomeController extends Controller {
+class HomeController extends BaseController {
 
     /**
      * HomeController constructor.
      */
     public function __construct() {
+        parent::__construct();
         $this->middleware('auth');
     }
     
