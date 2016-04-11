@@ -1,8 +1,9 @@
 <?php
 
-Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard'], function() {
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index');
     Route::get('/patients', 'PatientsController@index');
+    Route::get('/interventions', 'InterventionsController@index');
 });
 
 Route::group(['namespace' => 'Auth'], function() {

@@ -1,4 +1,4 @@
-@extends('layouts.base.index')
+@extends('layouts.base.index', ['title' => 'Prima pagină'])
 @section('content')
 
     <div class="row">

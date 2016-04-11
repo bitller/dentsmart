@@ -3,7 +3,7 @@
 <head>
     <meta id="token" content="{{ csrf_token() }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Dent Smart</title>
+    <title>{{ $title }} - Dent Smart</title>
 
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
@@ -41,7 +41,7 @@
                         <!-- END Halls -->
 
                         <li>
-                            <a href="#"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Intervenţii</a>
+                            <a href="/dashboard/interventions"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Intervenţii</a>
                         </li>
 
                         <!-- BEGIN Statistics -->
@@ -55,7 +55,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <span class="glyphicon glyphicon-user"></span>&nbsp;{{ $user->first_name . ' ' . $user->last_name }}
+                                <span class="glyphicon glyphicon-user"></span>&nbsp;
+                                @if (isset($user)) {{ $user->first_name . ' ' . $user->last_name }} @endif
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <!-- BEGIN Settings -->

@@ -31,4 +31,13 @@ class User extends Authenticatable {
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get user interventions.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function interventions() {
+        return $this->hasMany('App\Intervention');
+    }
 }

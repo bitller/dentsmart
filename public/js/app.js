@@ -24065,6 +24065,10 @@ var _LogIn = require('./components/LogIn.vue');
 
 var _LogIn2 = _interopRequireDefault(_LogIn);
 
+var _Interventions = require('./components/Interventions.vue');
+
+var _Interventions2 = _interopRequireDefault(_Interventions);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = window.jQuery = require('jquery');
@@ -24082,6 +24086,7 @@ Vue.config.debug = true;
 
 
 new Vue({
+
     /**
      * Target element.
      */
@@ -24092,7 +24097,8 @@ new Vue({
      */
     components: {
         'register': _Register2.default,
-        'login': _LogIn2.default
+        'login': _LogIn2.default,
+        'interventions': _Interventions2.default
     }
 });
 
@@ -24101,7 +24107,135 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-},{"./components/LogIn.vue":31,"./components/Register.vue":32,"bootstrap-sass":1,"jquery":2,"vue":29,"vue-resource":18}],31:[function(require,module,exports){
+},{"./components/Interventions.vue":32,"./components/LogIn.vue":34,"./components/Register.vue":35,"bootstrap-sass":1,"jquery":2,"vue":29,"vue-resource":18}],31:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: ['name']
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<td class=\"vert-align text-center\">{{ name }}</td>\n<td class=\"vert-align text-center\">john_doe</td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span>&nbsp;Afiseaza locuri</button></td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Afiseaza locuri</button></td>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/Intervention.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":29,"vue-hot-reload-api":4}],32:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _InterventionsTable = require('../components/InterventionsTable.vue');
+
+var _InterventionsTable2 = _interopRequireDefault(_InterventionsTable);
+
+var _ServerError = require('../components/ServerError.vue');
+
+var _ServerError2 = _interopRequireDefault(_ServerError);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+    data: function data() {
+        return {
+            server_error: ''
+        };
+    },
+
+    components: {
+        'interventions-table': _InterventionsTable2.default,
+        'server-error': _ServerError2.default
+    },
+
+    events: {
+        'server_error_occurred': function server_error_occurred(error) {
+            this.server_error = error;
+        }
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"row\">\n    <div class=\"col-md-6\">\n        <h3 class=\"blue-grey-text\">Intervenţii</h3>\n    </div>\n    <div class=\"col-md-6\">\n        <div class=\"btn btn-primary pull-right add-cashier\"><span class=\"glyphicon glyphicon-plus\"></span>&nbsp;Creează o nouă Intervenţie</div>\n    </div>\n</div>\n\n<div class=\"row\">\n    <server-error :error=\"server_error\"></server-error>\n</div>\n    \n<div class=\"row\">\n    <interventions-table></interventions-table>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/Interventions.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../components/InterventionsTable.vue":33,"../components/ServerError.vue":36,"vue":29,"vue-hot-reload-api":4}],33:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Intervention = require('../components/Intervention.vue');
+
+var _Intervention2 = _interopRequireDefault(_Intervention);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+    ready: function ready() {
+        this.getInterventions();
+    },
+
+    data: function data() {
+        return {
+            interventions: ''
+        };
+    },
+
+    components: {
+        'intervention': _Intervention2.default
+    },
+
+    methods: {
+        getInterventions: function getInterventions() {
+            var vn = this;
+            this.$http.get('/interventions/get').then(function (success) {
+                vn.interventions = success.data.interventions;
+            }, function (error) {
+                vn.serverErrorOccurred();
+            });
+        },
+
+        serverErrorOccurred: function serverErrorOccurred() {
+            this.$dispatch('server_error_occurred', 'O eroare a avut loc. Redeschide aceasta pagina si incearca din nou.');
+        }
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-show=\"interventions\" class=\"col-md-12\">\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n                <tr>\n                    <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Preţ <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                    <th class=\"text-center blue-grey-text\">Editează <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Şterge <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr v-for=\"intervention in interventions\">\n                    <td is=\"intervention\" name=\"intervention.name\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/InterventionsTable.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../components/Intervention.vue":31,"vue":29,"vue-hot-reload-api":4}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24167,7 +24301,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":29,"vue-hot-reload-api":4}],32:[function(require,module,exports){
+},{"vue":29,"vue-hot-reload-api":4}],35:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24236,6 +24370,28 @@ if (module.hot) {(function () {  module.hot.accept()
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   var id = "/var/www/html/dentsmart/resources/assets/js/components/Register.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":29,"vue-hot-reload-api":4}],36:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    props: ['error']
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-md-12\">\n    <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/ServerError.vue"
   if (!module.hot.data) {
     hotAPI.createRecord(id, module.exports)
   } else {

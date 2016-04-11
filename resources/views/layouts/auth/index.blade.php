@@ -15,7 +15,7 @@
 
 </head>
 
-<body id="cloud_ticket" class="auth-background">
+<body id="dent_smart" class="auth-background">
 
 <!-- BEGIN Wrapper -->
 <div id="wrapper">

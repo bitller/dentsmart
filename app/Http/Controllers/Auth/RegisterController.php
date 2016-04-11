@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\DefaultIntervention;
 use App\Http\Controllers\Controller;
+use App\Intervention;
 use App\Role;
 use App\User;
 use Illuminate\Contracts\Validation\Validator;
@@ -74,6 +76,15 @@ class RegisterController extends Controller {
         // Attach role
         $dentist = Role::where('name', 'dentist')->first();
         $user->attachRole($dentist);
+
+        // Insert default interventions
+        $defaultInterventions = DefaultIntervention::all();
+        foreach ($defaultInterventions as $defaultIntervention) {
+            $user->interventions()->save(new Intervention([
+                'name' => $defaultIntervention->name,
+                'price' => $defaultIntervention->price
+            ]));
+        }
 
         // Log user in
         Auth::login($user);
