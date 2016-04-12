@@ -24107,7 +24107,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-},{"./components/Interventions.vue":32,"./components/LogIn.vue":34,"./components/Register.vue":35,"bootstrap-sass":1,"jquery":2,"vue":29,"vue-resource":18}],31:[function(require,module,exports){
+},{"./components/Interventions.vue":32,"./components/LogIn.vue":34,"./components/Register.vue":36,"bootstrap-sass":1,"jquery":2,"vue":29,"vue-resource":18}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24117,7 +24117,7 @@ exports.default = {
     props: ['name']
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<td class=\"vert-align text-center\">{{ name }}</td>\n<td class=\"vert-align text-center\">john_doe</td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span>&nbsp;Afiseaza locuri</button></td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Afiseaza locuri</button></td>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<td class=\"vert-align text-center\">{{ name }}</td>\n<td class=\"vert-align text-center\">{{ price }}</td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span>&nbsp;Editează intervenție</button></td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Șterge intervenție</button></td>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -24178,7 +24178,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/InterventionsTable.vue":33,"../components/ServerError.vue":36,"vue":29,"vue-hot-reload-api":4}],33:[function(require,module,exports){
+},{"../components/InterventionsTable.vue":33,"../components/ServerError.vue":37,"vue":29,"vue-hot-reload-api":4}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24188,6 +24188,10 @@ Object.defineProperty(exports, "__esModule", {
 var _Intervention = require('../components/Intervention.vue');
 
 var _Intervention2 = _interopRequireDefault(_Intervention);
+
+var _Paginator = require('../components/Paginator.vue');
+
+var _Paginator2 = _interopRequireDefault(_Paginator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24204,14 +24208,28 @@ exports.default = {
     },
 
     components: {
-        'intervention': _Intervention2.default
+        'intervention': _Intervention2.default,
+        'paginator': _Paginator2.default
+    },
+
+    computed: {
+        showPaginator: function showPaginator() {
+            return this.interventions.total > this.interventions.per_page;
+        }
     },
 
     methods: {
-        getInterventions: function getInterventions() {
+        getInterventions: function getInterventions(url) {
+
             var vn = this;
-            this.$http.get('/interventions/get').then(function (success) {
-                vn.interventions = success.data.interventions;
+            // Set default url in case no one is given
+            if (typeof url === 'undefined') {
+                url = '/dashboard/interventions/get';
+            }
+
+            // Make request
+            this.$http.get(url).then(function (success) {
+                vn.interventions = success.data;
             }, function (error) {
                 vn.serverErrorOccurred();
             });
@@ -24220,10 +24238,16 @@ exports.default = {
         serverErrorOccurred: function serverErrorOccurred() {
             this.$dispatch('server_error_occurred', 'O eroare a avut loc. Redeschide aceasta pagina si incearca din nou.');
         }
+    },
+
+    events: {
+        'pagination_link_clicked': function pagination_link_clicked(pageNumber) {
+            this.getInterventions('/dashboard/interventions/get?page=' + pageNumber);
+        }
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-show=\"interventions\" class=\"col-md-12\">\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n                <tr>\n                    <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Preţ <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                    <th class=\"text-center blue-grey-text\">Editează <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Şterge <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr v-for=\"intervention in interventions\">\n                    <td is=\"intervention\" name=\"intervention.name\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-show=\"interventions\" class=\"col-md-12\">\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n                <tr>\n                    <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Preţ <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                    <th class=\"text-center blue-grey-text\">Editează <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Şterge <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr v-for=\"intervention in interventions.data\">\n                    <td is=\"intervention\" :name=\"intervention.name\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    \n    <paginator v-show=\"showPaginator\" :total=\"interventions.last_page\" :current_page=\"interventions.current_page\"></paginator>\n    \n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -24235,7 +24259,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/Intervention.vue":31,"vue":29,"vue-hot-reload-api":4}],34:[function(require,module,exports){
+},{"../components/Intervention.vue":31,"../components/Paginator.vue":35,"vue":29,"vue-hot-reload-api":4}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24302,6 +24326,35 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":29,"vue-hot-reload-api":4}],35:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    props: ['total', 'current_page'],
+
+    methods: {
+        paginatorLinkClicked: function paginatorLinkClicked(pageNumber) {
+            this.$dispatch('pagination_link_clicked', pageNumber);
+        }
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"col-md-12 text-center\">\n    <ul class=\"pagination\">\n        <li v-for=\"n in total\" :class=\"{ 'active': n+1===current_page }\">\n            <a @click=\"paginatorLinkClicked(n+1)\" href=\"#\">{{ n + 1 }}</a>\n        </li>\n    </ul>\n</div>\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/Paginator.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":29,"vue-hot-reload-api":4}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24376,7 +24429,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":29,"vue-hot-reload-api":4}],36:[function(require,module,exports){
+},{"vue":29,"vue-hot-reload-api":4}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -11,18 +11,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="intervention in interventions">
-                        <td is="intervention" name="intervention.name"></td>
+                    <tr v-for="intervention in interventions.data">
+                        <td is="intervention" :name="intervention.name"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        
+        <paginator v-show="showPaginator" :total="interventions.last_page" :current_page="interventions.current_page"></paginator>
+        
     </div>
 </template>
     
 <script>
 
     import Intervention from '../components/Intervention.vue';
+    import Paginator from '../components/Paginator.vue';
 
     export default {
 
@@ -37,14 +41,28 @@
         },
 
         components: {
-            'intervention': Intervention
+            'intervention': Intervention,
+            'paginator': Paginator
+        },
+
+        computed: {
+            showPaginator: function() {
+                return this.interventions.total > this.interventions.per_page;
+            }
         },
 
         methods: {
-            getInterventions: function() {
+            getInterventions: function(url) {
+
                 var vn = this;
-                this.$http.get('/interventions/get').then(function(success) {
-                    vn.interventions = success.data.interventions;
+                // Set default url in case no one is given
+                if (typeof url === 'undefined') {
+                    url = '/dashboard/interventions/get';
+                }
+
+                // Make request
+                this.$http.get(url).then(function(success) {
+                    vn.interventions = success.data;
                 }, function(error) {
                     vn.serverErrorOccurred();
                 });
@@ -52,6 +70,12 @@
 
             serverErrorOccurred: function() {
                 this.$dispatch('server_error_occurred', 'O eroare a avut loc. Redeschide aceasta pagina si incearca din nou.');
+            }
+        },
+
+        events: {
+            'pagination_link_clicked': function(pageNumber) {
+                this.getInterventions('/dashboard/interventions/get?page='+pageNumber);
             }
         }
     }
