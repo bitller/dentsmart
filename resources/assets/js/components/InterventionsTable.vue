@@ -12,7 +12,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="intervention in interventions.data">
-                        <td is="intervention" :name="intervention.name"></td>
+                        <td is="intervention" :intervention_data="intervention"></td>
                     </tr>
                 </tbody>
             </table>
@@ -74,6 +74,10 @@
         },
 
         events: {
+            'interventions_updated': function() {
+                this.getInterventions('/dashboard/interventions/get')
+            },
+
             'pagination_link_clicked': function(pageNumber) {
                 this.getInterventions('/dashboard/interventions/get?page='+pageNumber);
             }

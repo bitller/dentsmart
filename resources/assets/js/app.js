@@ -1,7 +1,9 @@
 window.$ = window.jQuery = require('jquery');
 var Vue = require('vue');
 
+// Bootstrap and sweet alert
 require('bootstrap-sass');
+require('sweetalert');
 
 // Require vue and vue resource
 Vue.use(require('vue-resource'));

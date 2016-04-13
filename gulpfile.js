@@ -14,6 +14,7 @@ require('laravel-elixir-vueify');
 
 elixir(function(mix) {
     mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts/bootstrap');
+    mix.copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/sass/sweetalert.scss');
     mix.sass('app.scss')
         .browserify('app.js');
 });

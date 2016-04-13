@@ -29,4 +29,14 @@ class Intervention extends Model {
         return $this->belongsTo('App\User');
     }
 
+    /**
+     * Order by created_at.
+     * 
+     * @param $query
+     * @return mixed
+     */
+    public function scopeLast($query) {
+        return $query->orderBy('created_at', 'desc');
+    }
+
 }

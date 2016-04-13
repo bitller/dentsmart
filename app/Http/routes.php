@@ -5,6 +5,7 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
     Route::get('/patients', 'PatientsController@index');
     Route::get('/interventions', 'InterventionsController@index');
     Route::get('/interventions/get', 'InterventionsController@paginate');
+    Route::post('/interventions/new', 'InterventionsController@createNewIntervention');
 });
 
 Route::group(['namespace' => 'Auth'], function() {

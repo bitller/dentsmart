@@ -5,7 +5,7 @@
             <h3 class="blue-grey-text">Intervenţii</h3>
         </div>
         <div class="col-md-6">
-            <div class="btn btn-primary pull-right add-cashier"><span class="glyphicon glyphicon-plus"></span>&nbsp;Creează o nouă Intervenţie</div>
+            <create-new-intervention></create-new-intervention>
         </div>
     </div>
     
@@ -21,6 +21,7 @@
 <script>
 
     import InterverventionsTable from '../components/InterventionsTable.vue';
+    import CreateNewIntervention from '../components/CreateNewIntervention.vue';
     import ServerError from '../components/ServerError.vue';
 
     export default {
@@ -33,12 +34,22 @@
         
         components: {
             'interventions-table': InterverventionsTable,
+            'create-new-intervention': CreateNewIntervention,
             'server-error': ServerError
         },
 
         events: {
             'server_error_occurred': function(error) {
                 this.server_error = error;
+            },
+
+            /**
+             * Because CreateNewIntervention and InterventionsTable components does not have a parent-child relationship
+             * and this component (Interventions) is the father of both, fire an event on CreateNewIntervention, catch it here and fire again
+             * to child components, InterventionsTable included.
+             */
+            'interventions_updated': function() {
+                this.$broadcast('interventions_updated');
             }
         }
     }
