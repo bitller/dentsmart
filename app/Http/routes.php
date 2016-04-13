@@ -3,9 +3,11 @@
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index');
     Route::get('/patients', 'PatientsController@index');
+
     Route::get('/interventions', 'InterventionsController@index');
     Route::get('/interventions/get', 'InterventionsController@paginate');
     Route::post('/interventions/new', 'InterventionsController@createNewIntervention');
+    Route::post('/interventions/delete', 'InterventionsController@deleteIntervention');
 });
 
 Route::group(['namespace' => 'Auth'], function() {

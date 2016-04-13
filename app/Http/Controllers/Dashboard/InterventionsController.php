@@ -59,6 +59,26 @@ class InterventionsController extends BaseController {
         ]);
     }
 
+    public function deleteIntervention(Request $request) {
+        sleep(4);
+        $interventionId = $request->get('intervention_id');
+        
+        if (Auth::user()->interventions()->where('id', $interventionId)->count()) {
+            Auth::user()->interventions()->where('id', $interventionId)->delete();
+            return response()->json([
+                'success' => true,
+                'title' => 'Succes!',
+                'message' => 'Intervenția a fost ștearsă!'
+            ]);
+        }
+
+        return response(422)->json([
+            'success' => false,
+            'title' => 'Ceva nu a mers bine.',
+            'message' => 'O eroare a avut loc. Vă rugăm redeschideți pagina și încercați din nou.'
+        ]);
+    }
+
     /**
      * Validate data used to create a new intervention.
      *

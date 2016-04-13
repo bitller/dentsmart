@@ -114,7 +114,7 @@
                     return false;
                 }
 
-                $('#createNewInterventionModal').modal('hide');
+                $('#createInterventionModal').modal('hide');
             }
         }
     }

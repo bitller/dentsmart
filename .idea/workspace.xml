@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0b0f15d-1b73-43a5-a10f-66f33da3df0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/InterventionsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Dashboard/InterventionsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Intervention.php" afterPath="$PROJECT_DIR$/app/Intervention.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js.map" afterPath="$PROJECT_DIR$/public/js/app.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/app.js" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/CreateNewIntervention.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/CreateNewIntervention.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/Intervention.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/Intervention.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/Interventions.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/Interventions.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/js/components/InterventionsTable.vue" afterPath="$PROJECT_DIR$/resources/assets/js/components/InterventionsTable.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="$PROJECT_DIR$/resources/assets/sass/app.scss" />
     </list>
     <ignored path="dentsmart.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +32,8 @@
       <file leaf-file-name="InterventionsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/InterventionsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="566">
+              <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
               <folding>
                 <element signature="e#50#90#0#PHP" expanded="true" />
               </folding>
@@ -111,8 +102,6 @@
         <option value="$PROJECT_DIR$/app/DefaultIntervention.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/Paginator.vue" />
-        <option value="$PROJECT_DIR$/resources/assets/js/components/Intervention.vue" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/InterventionsTable.vue" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/Interventions.vue" />
@@ -122,6 +111,8 @@
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/public/img/loading-bubbles.svg" />
         <option value="$PROJECT_DIR$/resources/assets/js/components/CreateNewIntervention.vue" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/assets/js/components/Intervention.vue" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Dashboard/InterventionsController.php" />
       </list>
     </option>
@@ -590,12 +581,12 @@
       <workItem from="1460476392532" duration="4919000" />
       <workItem from="1460520075872" duration="2571000" />
       <workItem from="1460554930610" duration="3601000" />
-      <workItem from="1460568765045" duration="970000" />
+      <workItem from="1460568765045" duration="3546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43725000" />
+    <option name="totallyTimeSpent" value="46301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -642,22 +633,22 @@
         <state relative-caret-position="1976">
           <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
           <folding>
-            <marker date="1460569689947" expanded="true" signature="2422:4794" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2450:2661" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
-            <marker date="1460569689947" expanded="true" signature="2681:4788" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="2815:4454" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2909:2962" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3071:3274" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3416:4038" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
-            <marker date="1460569689947" expanded="true" signature="4056:4438" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4102:4212" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4256:4364" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="4610:4778" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4646:4699" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2422:4791" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2450:2661" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
+            <marker date="1460571201811" expanded="true" signature="2681:4785" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="2815:4454" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2909:2962" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3071:3274" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3416:4038" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
+            <marker date="1460571201811" expanded="true" signature="4056:4438" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4102:4212" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4256:4364" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="4610:4775" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4646:4699" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -667,22 +658,22 @@
         <state relative-caret-position="208">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <marker date="1460569689947" expanded="true" signature="2422:4794" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2450:2661" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
-            <marker date="1460569689947" expanded="true" signature="2681:4788" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="2815:4454" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2909:2962" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3071:3274" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3416:4038" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
-            <marker date="1460569689947" expanded="true" signature="4056:4438" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4102:4212" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4256:4364" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="4610:4778" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4646:4699" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2422:4791" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2450:2661" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
+            <marker date="1460571201811" expanded="true" signature="2681:4785" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="2815:4454" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2909:2962" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3071:3274" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3416:4038" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
+            <marker date="1460571201811" expanded="true" signature="4056:4438" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4102:4212" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4256:4364" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="4610:4775" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4646:4699" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -904,20 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Intervention.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/base/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="982">
@@ -981,24 +958,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/InterventionsTable.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="76" column="46" selection-start-line="76" selection-start-column="46" selection-end-line="76" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Interventions.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Intervention.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <marker date="1460521795123" expanded="true" signature="67:164" placeholder=" Model of interventions table. ..." />
+            <marker date="1460521795123" expanded="true" signature="201:763" placeholder="..." />
+            <marker date="1460521795123" expanded="true" signature="210:276" placeholder=" Mass assignable attributes. ..." />
+            <marker date="1460521795123" expanded="true" signature="306:347" placeholder="..." />
+            <marker date="1460521795123" expanded="true" signature="358:484" placeholder=" Get the user that owns the intervention. ..." />
+            <marker date="1460521795123" expanded="true" signature="515:565" placeholder="..." />
+            <marker date="1460521795123" expanded="true" signature="575:659" placeholder=" Order by created_at. ..." />
+            <marker date="1460521795123" expanded="true" signature="701:760" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,33 +1018,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/components/CreateNewIntervention.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
+        <state relative-caret-position="982">
+          <caret line="116" column="43" selection-start-line="116" selection-start-column="43" selection-end-line="116" selection-end-column="43" />
           <folding>
-            <marker date="1460569689947" expanded="true" signature="2422:4794" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2450:2661" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
-            <marker date="1460569689947" expanded="true" signature="2681:4788" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="2815:4454" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="2909:2962" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3071:3274" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3416:4038" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
-            <marker date="1460569689947" expanded="true" signature="4056:4438" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4102:4212" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4256:4364" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
-            <marker date="1460569689947" expanded="true" signature="4610:4778" placeholder="{...}" />
-            <marker date="1460569689947" expanded="true" signature="4646:4699" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2422:4791" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2450:2661" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2471:2651" placeholder="{&quot;intervention_name&quot;: ''...}" />
+            <marker date="1460571201811" expanded="true" signature="2681:4785" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2696:2768" placeholder="/** Handle creation of new interventions. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="2815:4454" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="2909:2962" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3071:3274" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3416:4038" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="3764:4018" placeholder="{&quot;type&quot;: 'success'...}" />
+            <marker date="1460571201811" expanded="true" signature="4056:4438" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4102:4212" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4256:4364" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4469:4574" placeholder="/** Just close the modal. ...*/" />
+            <marker date="1460571201811" expanded="true" signature="4610:4775" placeholder="{...}" />
+            <marker date="1460571201811" expanded="true" signature="4646:4699" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Interventions.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1274">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding>
+            <marker date="1460521603707" expanded="false" signature="483:691" placeholder="..." />
+            <marker date="1460521603707" expanded="true" signature="712:1661" placeholder="{...}" />
+            <marker date="1460521603707" expanded="true" signature="748:827" placeholder="{...}" />
+            <marker date="1460521603707" expanded="true" signature="769:817" placeholder="{&quot;server_error&quot;: ''...}" />
+            <marker date="1460521603707" expanded="true" signature="858:1029" placeholder="{...}" />
+            <marker date="1460521603707" expanded="true" signature="1048:1655" placeholder="{...}" />
+            <marker date="1460521603707" expanded="true" signature="1103:1161" placeholder="{...}" />
+            <marker date="1460521603707" expanded="true" signature="1176:1523" placeholder="/** Because CreateNewIntervention and InterventionsTable components does not have a parent-child relationship ...*/" />
+            <marker date="1460521603707" expanded="true" signature="1572:1645" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/InterventionsTable.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="982">
+          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+          <folding>
+            <marker date="1460521465463" expanded="false" signature="1451:1559" placeholder="..." />
+            <marker date="1460521465463" expanded="true" signature="1580:3125" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="1609:1657" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="1685:1765" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="1706:1755" placeholder="{&quot;interventions&quot;: ''...}" />
+            <marker date="1460521465463" expanded="true" signature="1788:1876" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="1897:2041" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="1937:2031" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2061:2789" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2107:2589" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2248:2325" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2418:2490" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2508:2573" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2636:2779" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2808:3119" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="2858:2943" placeholder="{...}" />
+            <marker date="1460521465463" expanded="true" signature="3006:3109" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="84" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="84" />
+          <folding>
+            <marker date="1460572176667" expanded="true" signature="20:533" placeholder="..." />
+            <marker date="1460572176667" expanded="true" signature="111:532" placeholder="..." />
+            <marker date="1460572176667" expanded="true" signature="550:1008" placeholder="..." />
+            <marker date="1460572176667" expanded="true" signature="587:1007" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/assets/js/components/Intervention.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+          <folding>
+            <marker date="1460572246779" expanded="true" signature="583:3626" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="649:726" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="670:716" placeholder="{&quot;loading&quot;: true...}" />
+            <marker date="1460572246779" expanded="true" signature="746:3620" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="761:878" placeholder="/** Delete selected intervention. ...*/" />
+            <marker date="1460572246779" expanded="true" signature="936:2817" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="1059:2801" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="1133:1273" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="1418:1917" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="1449:1830" placeholder="{&quot;type&quot;: 'success'...}" />
+            <marker date="1460572246779" expanded="true" signature="1935:2781" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="2158:2239" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="2288:2373" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="2404:2757" placeholder="{&quot;type&quot;: 'error'...}" />
+            <marker date="1460572246779" expanded="true" signature="2832:2980" placeholder="/** Ask user for delete confirmation. ...*/" />
+            <marker date="1460572246779" expanded="true" signature="3033:3610" placeholder="{...}" />
+            <marker date="1460572246779" expanded="true" signature="3056:3530" placeholder="{&quot;title&quot;: 'Sunteţi sigur?'...}" />
+            <marker date="1460572246779" expanded="true" signature="3543:3594" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Dashboard/InterventionsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="566">
+          <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
           <folding>
             <element signature="e#50#90#0#PHP" expanded="true" />
           </folding>
