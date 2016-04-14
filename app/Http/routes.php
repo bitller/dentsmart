@@ -4,6 +4,8 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
     Route::get('/', 'HomeController@index');
     Route::get('/patients', 'PatientsController@index');
 
+    Route::get('/appointments', 'AppointmentsController@index');
+
     Route::get('/interventions', 'InterventionsController@index');
     Route::get('/interventions/get', 'InterventionsController@paginate');
     Route::post('/interventions/new', 'InterventionsController@createNewIntervention');

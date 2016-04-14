@@ -40,4 +40,13 @@ class User extends Authenticatable {
     public function interventions() {
         return $this->hasMany('App\Intervention');
     }
+
+    /**
+     * get user patients.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function patients() {
+        return $this->hasMany('App\Patient');
+    }
 }

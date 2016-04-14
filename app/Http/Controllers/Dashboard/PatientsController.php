@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Patients page logic.
@@ -26,5 +27,13 @@ class PatientsController extends Controller {
     public function index() {
         return view('pages.dashboard.patients.index');
     }
-    
+
+    /**
+     * Paginate patients.
+     * 
+     * @return mixed
+     */
+    public function paginate() {
+        return Auth::user()->patients()->paginate(10);
+    }
 }
