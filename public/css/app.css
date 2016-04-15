@@ -2908,28 +2908,28 @@ fieldset[disabled] a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #15CD72;
-  border-color: #15CD72; }
+  background-color: #FF7473;
+  border-color: #FF7473; }
   .btn-success:focus, .btn-success.focus {
     color: #fff;
-    background-color: #109f58;
-    border-color: #095932; }
+    background-color: #ff4140;
+    border-color: #f30200; }
   .btn-success:hover {
     color: #fff;
-    background-color: #109f58;
-    border-color: #0f9553; }
+    background-color: #ff4140;
+    border-color: #ff3736; }
   .btn-success:active, .btn-success.active,
   .open > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #109f58;
-    border-color: #0f9553; }
+    background-color: #ff4140;
+    border-color: #ff3736; }
     .btn-success:active:hover, .btn-success:active:focus, .btn-success:active.focus, .btn-success.active:hover, .btn-success.active:focus, .btn-success.active.focus,
     .open > .btn-success.dropdown-toggle:hover,
     .open > .btn-success.dropdown-toggle:focus,
     .open > .btn-success.dropdown-toggle.focus {
       color: #fff;
-      background-color: #0d7e46;
-      border-color: #095932; }
+      background-color: #ff1e1c;
+      border-color: #f30200; }
   .btn-success:active, .btn-success.active,
   .open > .btn-success.dropdown-toggle {
     background-image: none; }
@@ -2937,10 +2937,10 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-success:hover,
   fieldset[disabled] .btn-success:focus,
   fieldset[disabled] .btn-success.focus {
-    background-color: #15CD72;
-    border-color: #15CD72; }
+    background-color: #FF7473;
+    border-color: #FF7473; }
   .btn-success .badge {
-    color: #15CD72;
+    color: #FF7473;
     background-color: #fff; }
 
 .btn-info {
@@ -6707,19 +6707,23 @@ body {
   position: relative; }
 
 #content {
-  padding-bottom: 100px;
-  /* Height of the footer element */ }
+  /* Height of the footer element */
+  padding-bottom: 70px; }
 
 #footer {
-  background: #ffab62;
+  background: #F8F8F8;
+  border-top: 1px solid #dfdfdf;
   width: 100%;
-  height: 100px;
+  height: 50px;
   position: absolute;
   bottom: 0;
   left: 0; }
 
+.footer-text {
+  padding-top: 15px; }
+
 .auth-background {
-  background-color: #298EEA; }
+  background-color: #47B8E0; }
 
 .logo {
   margin-top: 40px;

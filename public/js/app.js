@@ -25325,6 +25325,10 @@ var _Interventions = require('./components/Interventions.vue');
 
 var _Interventions2 = _interopRequireDefault(_Interventions);
 
+var _Patients = require('./components/Patients.vue');
+
+var _Patients2 = _interopRequireDefault(_Patients);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = window.jQuery = require('jquery');
@@ -25356,7 +25360,8 @@ new Vue({
     components: {
         'register': _Register2.default,
         'login': _LogIn2.default,
-        'interventions': _Interventions2.default
+        'interventions': _Interventions2.default,
+        'patients': _Patients2.default
     }
 });
 
@@ -25365,7 +25370,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-},{"./components/Interventions.vue":42,"./components/LogIn.vue":44,"./components/Register.vue":46,"bootstrap-sass":1,"jquery":2,"sweetalert":12,"vue":38,"vue-resource":27}],40:[function(require,module,exports){
+},{"./components/Interventions.vue":42,"./components/LogIn.vue":44,"./components/Patients.vue":46,"./components/Register.vue":47,"bootstrap-sass":1,"jquery":2,"sweetalert":12,"vue":38,"vue-resource":27}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25452,7 +25457,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"btn btn-primary pull-right add-cashier\" data-toggle=\"modal\" data-target=\"#createInterventionModal\" data-backdrop=\"static\" data-keyboard=\"false\">\n    <span class=\"glyphicon glyphicon-plus\"></span>&nbsp;Creează o nouă Intervenţie\n</div>\n\n<div id=\"createInterventionModal\" class=\"modal fade\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- BEGIN Modal content -->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"close\">×</button>\n                <h4 class=\"modal-title\">Creează o nouă Intervenţie</h4>\n            </div>\n            <div class=\"modal-body\">\n                <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n                <div class=\"form-group\">\n                    <input v-model=\"intervention_name\" @keyup.enter=\"createNewIntervention\" :class=\"{ 'custom-input-error': errors.intervention_name }\" type=\"text\" class=\"form-control input-lg custom-input\" placeholder=\"Numele intervenţiei\">\n                    <span v-show=\"errors.intervention_name\" class=\"text-danger\">{{ errors.intervention_name }}</span>\n                </div>\n                <div class=\"form-group\">\n                    <input v-model=\"intervention_price\" @keyup.enter=\"createNewIntervention\" :class=\"{ 'custom-input-error': errors.intervention_price }\" type=\"text\" class=\"form-control input-lg custom-input\" placeholder=\"Preţul intervenţiei\">\n                    <span v-show=\"errors.intervention_price\" class=\"text-danger\">{{ errors.intervention_price }}</span>\n                </div>\n            </div>\n            <div class=\"modal-footer\">\n                <button @click=\"createNewIntervention\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-primary\">\n                    <span v-show=\"!loading\">Creează intervenţia</span>\n                    <img v-show=\"loading\" src=\"/img/loading-bubbles.svg\" alt=\"Loading icon\">\n                </button>\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-default\">Close</button>\n            </div>\n        </div>\n        <!-- END Modal content -->\n    </div>\n</div>\n\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"btn btn-primary pull-right add-cashier\" data-toggle=\"modal\" data-target=\"#createInterventionModal\" data-backdrop=\"static\" data-keyboard=\"false\">\n    <span class=\"glyphicon glyphicon-plus\"></span>&nbsp;Creează o nouă Intervenţie\n</div>\n\n<div id=\"createInterventionModal\" class=\"modal fade\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- BEGIN Modal content -->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"close\">×</button>\n                <h4 class=\"modal-title\">Creează o nouă Intervenţie</h4>\n            </div>\n            <div class=\"modal-body\">\n                <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n                <div class=\"form-group\">\n                    <input v-model=\"intervention_name\" @keyup.enter=\"createNewIntervention\" :class=\"{ 'custom-input-error': errors.intervention_name }\" type=\"text\" class=\"form-control input-lg custom-input\" placeholder=\"Numele intervenţiei\">\n                    <span v-show=\"errors.intervention_name\" class=\"text-danger\">{{ errors.intervention_name }}</span>\n                </div>\n                <div class=\"form-group\">\n                    <input v-model=\"intervention_price\" @keyup.enter=\"createNewIntervention\" :class=\"{ 'custom-input-error': errors.intervention_price }\" type=\"text\" class=\"form-control input-lg custom-input\" placeholder=\"Preţul intervenţiei\">\n                    <span v-show=\"errors.intervention_price\" class=\"text-danger\">{{ errors.intervention_price }}</span>\n                </div>\n            </div>\n            <div class=\"modal-footer\">\n                <button @click=\"createNewIntervention\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-primary\">\n                    <span v-show=\"!loading\">Creează intervenţia</span>\n                    <img v-show=\"loading\" src=\"/img/loading-bubbles.svg\" alt=\"Loading icon\">\n                </button>\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-default\">Close</button>\n            </div>\n        </div>\n        <!-- END Modal content -->\n    </div>\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -25559,7 +25564,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<td class=\"vert-align text-center\">{{ intervention_data.name }}</td>\n<td class=\"vert-align text-center\">{{ intervention_data.price }}</td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-pencil\"></span>&nbsp;Editează intervenție</button></td>\n<td class=\"vert-align text-center\">\n    <button @click=\"deleteIntervention(intervention_data.id)\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Șterge intervenție</button>\n</td>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<td class=\"vert-align text-center\">{{ intervention_data.name }}</td>\n<td class=\"vert-align text-center\">{{ intervention_data.price }}</td>\n<td class=\"vert-align text-center\">\n    <button @click=\"deleteIntervention(intervention_data.id)\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span>&nbsp;Șterge intervenție</button>\n</td>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -25634,7 +25639,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../components/CreateNewIntervention.vue":40,"../components/InterventionsTable.vue":43,"../components/ServerError.vue":47,"vue":38,"vue-hot-reload-api":13}],43:[function(require,module,exports){
+},{"../components/CreateNewIntervention.vue":40,"../components/InterventionsTable.vue":43,"../components/ServerError.vue":48,"vue":38,"vue-hot-reload-api":13}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25707,7 +25712,7 @@ exports.default = {
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-show=\"interventions\" class=\"col-md-12\">\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n                <tr>\n                    <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Preţ <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                    <th class=\"text-center blue-grey-text\">Editează <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Şterge <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr v-for=\"intervention in interventions.data\">\n                    <td is=\"intervention\" :intervention_data=\"intervention\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    \n    <paginator v-show=\"showPaginator\" :total=\"interventions.last_page\" :current_page=\"interventions.current_page\"></paginator>\n    \n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div v-show=\"interventions\" class=\"col-md-12\">\n    <div class=\"panel panel-default\">\n        <table class=\"table table-bordered\">\n            <thead>\n                <tr>\n                    <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                    <th class=\"text-center blue-grey-text\">Preţ <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                    <th class=\"text-center blue-grey-text\">Şterge <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Ștergeți casierul slectat\">?</span></th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr v-for=\"intervention in interventions.data\">\n                    <td is=\"intervention\" :intervention_data=\"intervention\"></td>\n                </tr>\n            </tbody>\n        </table>\n    </div>\n    \n    <paginator v-show=\"showPaginator\" :total=\"interventions.last_page\" :current_page=\"interventions.current_page\"></paginator>\n    \n</div>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -25820,6 +25825,44 @@ if (module.hot) {(function () {  module.hot.accept()
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _AddNewPatient = require('../components/patients/AddNewPatient.vue');
+
+var _AddNewPatient2 = _interopRequireDefault(_AddNewPatient);
+
+var _PatientsTable = require('../components/patients/PatientsTable.vue');
+
+var _PatientsTable2 = _interopRequireDefault(_PatientsTable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+    components: {
+        'add-new-patient': _AddNewPatient2.default,
+        'patients-table': _PatientsTable2.default
+    }
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"row\">\n    <div class=\"col-md-6\">\n        <h3 class=\"blue-grey-text\">Pacienţi</h3>\n    </div>\n    <div class=\"col-md-6\">\n        <add-new-patient></add-new-patient>\n    </div>\n</div>\n\n\n<server-error :error=\"server_error\"></server-error>\n\n<patients-table></patients-table>\n    \n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/Patients.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../components/patients/AddNewPatient.vue":49,"../components/patients/PatientsTable.vue":51,"vue":38,"vue-hot-reload-api":13}],47:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.default = {
     data: function data() {
         return {
@@ -25889,7 +25932,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":38,"vue-hot-reload-api":13}],47:[function(require,module,exports){
+},{"vue":38,"vue-hot-reload-api":13}],48:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25911,6 +25954,127 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":38,"vue-hot-reload-api":13}]},{},[39]);
+},{"vue":38,"vue-hot-reload-api":13}],49:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    data: function data() {
+        return {
+            loading: false,
+            errors: '',
+            error: '',
+            patient_first_name: '',
+            patient_last_name: '',
+            patient_email: '',
+            patient_phone_number: ''
+        };
+    },
+
+    methods: {
+
+        addNewPatient: function addNewPatient() {
+            //
+        },
+
+        closeModal: function closeModal() {
+            if (this.loading) {
+                return false;
+            }
+
+            $('#addNewPatientModal').modal('hide');
+        }
+    }
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"btn btn-primary pull-right add-cashier\" data-toggle=\"modal\" data-target=\"#addNewPatientModal\" data-backdrop=\"static\" data-keyboard=\"false\">\n    <span class=\"glyphicon glyphicon-plus\"></span>&nbsp;Adaugă pacient nou\n</div>\n\n<div id=\"addNewPatientModal\" class=\"modal fade\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- BEGIN Modal content -->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"close\">×</button>\n                <h4 class=\"modal-title\">Adaugă pacient nou</h4>\n            </div>\n\n            <div class=\"modal-body\">\n                <div v-show=\"error\" class=\"alert alert-danger\">{{ error }}</div>\n\n                <div class=\"form-group\">\n                    <input v-model=\"patient_first_name\" @keyup.enter=\"addNewPatient\" :class=\"{ 'custom-input-error': errors.patient_first_name }\" class=\"form-control input-lg custom-input\" placeholder=\"Numele pacientului\">\n                    <span v-show=\"errors.patient_first_name\" class=\"text-danger\">{{ errors.patient_first_name }}</span>\n                </div>\n\n                <div class=\"form-group\">\n                    <input v-model=\"patient_last_name\" @keyup.enter=\"addNewPatient\" :class=\"{ 'custom-input-error': errors.patient_last_name }\" class=\"form-control input-lg custom-input\" placeholder=\"Penumele pacientului\">\n                    <span v-show=\"errors.patient_last_name\" class=\"text-danger\">{{ errors.patient_last_name }}</span>\n                </div>\n\n                <div class=\"form-group\">\n                    <input v-model=\"patient_email\" @keyup.enter=\"addNewPatient\" :class=\"{ 'custom-input-error': errors.patient_email }\" class=\"form-control input-lg custom-input\" placeholder=\"Email-ul pacientului\">\n                    <span v-show=\"errors.patient_email\" class=\"text-danger\">{{ errors.patient_email }}</span>\n                </div>\n\n                <div class=\"form-group\">\n                    <input v-model=\"patient_phone_number\" @keyup.enter=\"addNewPatient\" :class=\"{ 'custom-input-error': errors.patient_phone_number }\" class=\"form-control input-lg custom-input\" placeholder=\"Numărul de telefon al pacientului\">\n                    <span v-show=\"errors.patient_phone_number\" class=\"text-danger\">{{ errors.patient_phone_number }}</span>\n                </div>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button @click=\"createNewIntervention\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-primary\">\n                    <span v-show=\"!loading\">Adaugă pacientul</span>\n                    <img v-show=\"loading\" src=\"/img/loading-bubbles.svg\" alt=\"Loading icon\">\n                </button>\n                <button @click=\"closeModal\" :class=\"{ 'disabled': loading }\" type=\"button\" class=\"btn btn-default\">Anulează</button>\n            </div>\n        </div>\n        <!-- END Modal content -->\n\n    </div>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/patients/AddNewPatient.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":38,"vue-hot-reload-api":13}],50:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+
+    props: ['patient_data']
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<td class=\"vert-align text-center\">John</td>\n<td class=\"vert-align text-center\">Doe</td>\n<td class=\"vert-align text-center\">0730167969</td>\n<td class=\"vert-align text-center\">john.doe@example.com</td>\n<td class=\"vert-align text-center\"><button class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-calendar\"></span>&nbsp;Creează programare</button></td>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/patients/Patient.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":38,"vue-hot-reload-api":13}],51:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Paginator = require('../../components/Paginator.vue');
+
+var _Paginator2 = _interopRequireDefault(_Paginator);
+
+var _Patient = require('../../components/patients/Patient.vue');
+
+var _Patient2 = _interopRequireDefault(_Patient);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+
+    ready: function ready() {
+        this.getPatients();
+    },
+
+    data: function data() {
+        return {
+            patients: ''
+        };
+    },
+
+    components: {
+        'patient': _Patient2.default,
+        'paginator': _Paginator2.default
+    }
+
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n    \n    <div class=\"row\">\n        <div class=\"col-md-12\">\n            <div class=\"panel panel-default\">\n                <table class=\"table table-bordered\">\n                    <thead>\n                        <tr>\n                            <th class=\"text-center blue-grey-text\">Prenume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele casierului\" data-placement=\"top\">?</span></th>\n                            <th class=\"text-center blue-grey-text\">Nume <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                            <th class=\"text-center blue-grey-text\">Număr de telefon <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                            <th class=\"text-center blue-grey-text\">Adresă de email <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                            <th class=\"text-center blue-grey-text\">Creează programare <span class=\"badge pointer\" data-toggle=\"tooltip\" title=\"Numele folosit de casier pentru conectarea la aplicație\" data-placement=\"top\">?</span> </th>\n                        </tr>\n                    </thead>\n                <tbody>\n                    <tr>\n                        <td is=\"patient\"></td>\n                    </tr>\n\n                </tbody>\n            </table>\n        </div>\n    </div>\n    \n</div>"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  var id = "/var/www/html/dentsmart/resources/assets/js/components/patients/PatientsTable.vue"
+  if (!module.hot.data) {
+    hotAPI.createRecord(id, module.exports)
+  } else {
+    hotAPI.update(id, module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"../../components/Paginator.vue":45,"../../components/patients/Patient.vue":50,"vue":38,"vue-hot-reload-api":13}]},{},[39]);
 
 //# sourceMappingURL=app.js.map

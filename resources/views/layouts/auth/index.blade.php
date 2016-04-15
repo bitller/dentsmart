@@ -3,7 +3,7 @@
 <head>
     <meta id="token" content="{{ csrf_token() }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>{{ $title }} - Cloud Ticket</title>
+    <title>{{ $title }} - DentSmart</title>
 
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
 

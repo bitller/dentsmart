@@ -66,7 +66,6 @@ class InterventionsController extends BaseController {
      * @return mixed
      */
     public function deleteIntervention(Request $request) {
-        sleep(4);
         $interventionId = $request->get('intervention_id');
         
         if (Auth::user()->interventions()->where('id', $interventionId)->count()) {

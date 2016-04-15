@@ -1,4 +1,5 @@
 <template>
+    
     <div class="btn btn-primary pull-right add-cashier" data-toggle="modal" data-target="#createInterventionModal" data-backdrop="static" data-keyboard="false">
         <span class="glyphicon glyphicon-plus"></span>&nbsp;Creează o nouă Intervenţie
     </div>

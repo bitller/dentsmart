@@ -1,9 +1,14 @@
 <?php
 
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
+
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', 'HomeController@index');
+    
     Route::get('/patients', 'PatientsController@index');
-
+    Route::get('/patients/new', 'PatientsController@createNewPatient');
+        
     Route::get('/appointments', 'AppointmentsController@index');
 
     Route::get('/interventions', 'InterventionsController@index');
@@ -22,5 +27,3 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::get('/register', 'RegisterController@index')->middleware('guest');
     Route::post('/register', 'RegisterController@register')->middleware('guest');
 });
-
-Route::get('/home', 'HomeController@index');

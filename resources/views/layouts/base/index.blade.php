@@ -87,7 +87,11 @@
     </div>
 
     <div id="footer">
-        footer
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center footer-text">2016 - Toate drepturile rezervate.</div>
+            </div>
+        </div>
     </div>
 
     <script src="/js/app.js"></script>

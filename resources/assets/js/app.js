@@ -15,6 +15,7 @@ Vue.config.debug = true;
 import Register from './components/Register.vue';
 import LogIn from './components/LogIn.vue';
 import Interventions from './components/Interventions.vue';
+import Patients from './components/Patients.vue';
 
 new Vue({
     
@@ -29,7 +30,8 @@ new Vue({
     components: {
         'register': Register,
         'login': LogIn,
-        'interventions': Interventions
+        'interventions': Interventions,
+        'patients': Patients
     }
 });
 

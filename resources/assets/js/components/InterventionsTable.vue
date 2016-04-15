@@ -6,7 +6,6 @@
                     <tr>
                         <th class="text-center blue-grey-text">Nume <span class="badge pointer" data-toggle="tooltip" title="Numele casierului" data-placement="top">?</span></th>
                         <th class="text-center blue-grey-text">Preţ <span class="badge pointer" data-toggle="tooltip" title="Numele folosit de casier pentru conectarea la aplicație" data-placement="top">?</span> </th>
-                        <th class="text-center blue-grey-text">Editează <span class="badge pointer" data-toggle="tooltip" title="Ștergeți casierul slectat">?</span></th>
                         <th class="text-center blue-grey-text">Şterge <span class="badge pointer" data-toggle="tooltip" title="Ștergeți casierul slectat">?</span></th>
                     </tr>
                 </thead>
